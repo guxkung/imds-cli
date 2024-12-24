@@ -1,18 +1,11 @@
+/*
+Copyright © 2024 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import (
-	"os"
-	"guxkung.com/curl-in-go"
-)
-
-func ErrorHandling() {
-}
+import "guxkung.com/cli/cmd"
 
 func main() {
-	args := os.Args
-
-	if len(args) < 2 {
-		os.Exit(1)
-	}
-	code := curl.RequestV1(args[1])
+	cmd.Execute()
 }
