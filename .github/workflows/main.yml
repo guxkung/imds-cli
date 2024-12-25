@@ -18,7 +18,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           load: true
-          tags: ${{ inputs.tags }}
           outputs: type=docker,dest=${{ inputs.output_path }}
           context: .
           no-cache: true
