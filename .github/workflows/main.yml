@@ -25,4 +25,4 @@ jobs:
           context: .
           no-cache: true
           push: true
-          tags: amd64
+          tags: guxkung/imds_cli:amd64
