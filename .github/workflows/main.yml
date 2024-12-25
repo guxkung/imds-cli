@@ -1,0 +1,26 @@
+name: ci/cd
+
+on:
+  push:
+    branches:
+    - "main"
+
+jobs:
+  build:
+    runs-on: [self-hosted, linux, x64]
+    name: Build docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build local
+        uses: docker/build-push-action@v6
+        with:
+          load: true
+          tags: ${{ inputs.tags }}
+          outputs: type=docker,dest=${{ inputs.output_path }}
+          context: .
+          no-cache: true
+          push: true
+          tags: amd64
