@@ -17,7 +17,6 @@ jobs:
       - name: Build local
         uses: docker/build-push-action@v6
         with:
-          outputs: type=docker,dest=${{ inputs.output_path }}
           context: .
           no-cache: true
           push: true
